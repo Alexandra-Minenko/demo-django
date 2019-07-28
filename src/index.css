@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,800|Pacifico|Passion+One:400,700,900&display=swap');
+
 body {
 	background: #e5e5e5;
   	margin: 0;
@@ -13,9 +15,133 @@ code {
     monospace;
 }
 
-.submitBtn {
-	width: 274px;
-	height: 76px;
+
+header {
+	position: absolute;
+	right:0;
+	width: 100%;
+	background: #fff;
+	opacity:0.8;
+}
+header .header-section {
+	padding: 0 120px;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+}
+header a {
+	display:flex;
+	align-items: center;
+}
+header .user {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	
+}
+header .user p {
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 27px;
+	color: #424242;
+	margin: 0 16px;
+}
+header .user img {
+	border-radius: 50%;
+	margin: 12px 0;
+}
+.title {
+	position: relative;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	background: url('./Images/andrei-DZyF-0_oe4Y-unsplash.png') no-repeat 50% 50%;
+	background-size: cover;
+	height: 800px;
+}
+.title h2 {
+	font-family: Pacifico;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 56px;
+	line-height: 98px;
+	color: #FFFFFF;
+	margin: 190px 0 0;
+}
+.title h1 {
+	font-family: Passion One;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 200px;
+	line-height: 220px;
+	text-transform: uppercase;
+	color: #FFFFFF;
+	margin: 0 0 20px;
+}
+.title p {
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 29px;
+	color: #FFFFFF;
+	margin: 0;
+}
+.title .btnMenu {
+	background: rgba(66, 66, 66, 0.16);
+	border: 2px solid #FFFFFF;
+	box-sizing: border-box;
+	border-radius: 2px;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 22px;
+	padding: 27px 66px;
+	margin: 60px auto 0 auto;
+	text-transform: uppercase;
+	color: #FFFFFF;
+}
+.title .btnMenu:hover {
+	cursor: pointer;
+} 
+.wrap {
+	padding: 120px 0;
+	box-sizing: border-box;
+	background: #f6fbf6;
+}
+.introduction {
+	width:800px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin: 0 auto;
+}
+.introduction h2 {
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 800;
+	font-size: 34px;
+	line-height: 41px;
+	text-transform: uppercase;
+	color: #263238;
+	margin: 16px 0 40px;
+}
+.introduction p {
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 27px;
+	text-align: center;
+	color: #37474F;
+	margin: 0;
+	
+}
+
+.btnAdd {
 	font-family: Montserrat;
 	font-style: normal;
 	font-weight: bold;
@@ -25,10 +151,12 @@ code {
 	background: #467c2d;
 	border-radius: 2px;
 	padding: 27px 63px;
-	margin: 90px 0 87px;
 	box-sizing: border-box;
+	margin: 90px 0 87px;
+	border: none;
+	
 }
-.submitBtn:hover {
+.btnAdd:hover {
 	cursor: pointer;
 }
 
@@ -85,4 +213,83 @@ footer p {
 	line-height: 22px;
 	margin: 61px 0;
 	color: #fff;
+}
+footer .social-media {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 224px;
+	margin:0;
+	padding:0;
+	list-style:none;
+	
+}
+.addNewRecipe {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.block {
+	width: 845px;
+	height: 936px;
+	background: #f6fbf6;
+}
+.formForAddRecipe {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.formForAddRecipe input {
+	width: 600px;
+	border: none;
+	border-bottom: 2px solid #424242;;
+	background: #e5e5e5;
+}
+.formForAddRecipe textarea {
+	width: 600px;
+	border: none;
+	border-bottom: 2px solid #424242;;
+	background: #e5e5e5;
+}
+.formForAddRecipe label {
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 29px;
+	color: #263238;
+}
+.formForAddRecipe input[placeholder], 
+.formForAddRecipe textarea[placeholder] {
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 27px;
+	color: #37474F;
+	opacity: 0.5;
+	padding: 26px 0 30px;
+	margin: 0 0 40px;
+}
+.formForAddRecipe input[placeholder]:focus, 
+.formForAddRecipe textarea[placeholder]:focus {
+	opacity: 1;
+	color: #000;
+}
+.formForAddRecipe .submit {
+	width: 274px;
+	height: 76px;
+	background: #467C2D;
+	border-radius: 2px;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 22px;
+	text-transform: uppercase;
+	color: #fff;
+}
+.newRecipe footer {
+	margin: 0;
 }

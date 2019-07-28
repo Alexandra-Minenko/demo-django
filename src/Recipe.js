@@ -7,7 +7,7 @@ class Recipe extends Component {
     	<div className='section'>
     		{this.props.items.map((item, index) => 
 				<div key={index} className='card'>
-				  <img src={item.img} />
+				  <img src={item.img} alt={item.img} />
 					<h3>{item.title}</h3>
 					<p>{item.description}</p>
 				</div>

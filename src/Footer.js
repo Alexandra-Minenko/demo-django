@@ -6,11 +6,11 @@ class Footer extends Component {
     	<footer>
     		<div className='section'>
     			<p>© 2019 Django. All rights reserved</p>
-    			<ul>
-					<li><a href='#'><img src='Images/Django.png'/></a></li>
-					<li><a href='#'></a></li>
-					<li><a href='#'></a></li>
-					<li><a href='#'></a></li>
+    			<ul className='social-media'>
+					<li><a href='#'><img src={require('./Images/group.png')} alt='group' /></a></li>					
+					<li><a href='#'><img src={require('./Images/facebook.png')} alt='facebook' /></a></li>
+					<li><a href='#'><img src={require('./Images/twitter.png')} alt='twitter' /></a></li>
+					<li><a href='#'><img src={require('./Images/linkedin.png')} alt='linkedin' /></a></li>
     			</ul>
     			<p>Charlotte, North Carolina</p>
     		</div>
