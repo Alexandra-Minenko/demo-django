@@ -4,7 +4,7 @@ class Recipe extends Component {
   render() {
   
     return (
-    	<div className='section'>
+    	<section className='section recipeList'>
     		{this.props.items.map((item, index) => 
 				<div key={index} className='card'>
 				  <img src={item.img} alt={item.img} />
@@ -12,7 +12,7 @@ class Recipe extends Component {
 					<p>{item.description}</p>
 				</div>
     		)}  		
-      </div>
+      </section>
     );
 
   }

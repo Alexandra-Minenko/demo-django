@@ -1,0 +1,66 @@
+.addNewRecipe {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.block {
+	width: 845px;
+	height: 936px;
+	background: #f6fbf6;
+}
+.formForAddRecipe {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.formForAddRecipe input {
+	width: 600px;
+	border: none;
+	border-bottom: 2px solid #424242;;
+	background: #e5e5e5;
+}
+.formForAddRecipe textarea {
+	width: 600px;
+	border: none;
+	border-bottom: 2px solid #424242;;
+	background: #e5e5e5;
+}
+.formForAddRecipe label {
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 29px;
+	color: #263238;
+}
+.formForAddRecipe input[placeholder], 
+.formForAddRecipe textarea[placeholder] {
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 27px;
+	color: #37474F;
+	opacity: 0.5;
+	padding: 26px 0 30px;
+	margin: 0 0 40px;
+}
+.formForAddRecipe input[placeholder]:focus, 
+.formForAddRecipe textarea[placeholder]:focus {
+	opacity: 1;
+	color: #000;
+}
+.formForAddRecipe .submit {
+	width: 274px;
+	height: 76px;
+	background: #467C2D;
+	border-radius: 2px;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 22px;
+	text-transform: uppercase;
+	color: #fff;
+}

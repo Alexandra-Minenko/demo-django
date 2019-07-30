@@ -1,0 +1,25 @@
+.section {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	max-width: 1170px;	
+}
+.btnAddNewItem {
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+	text-transform: uppercase;
+	color: #fff;
+	background: #467c2d;
+	border-radius: 2px;
+	padding: 27px 63px;
+	box-sizing: border-box;
+	margin: 90px 0 87px;
+	border: none;
+	
+}
+.btnAddNewItem:hover {
+	cursor: pointer;
+}
