@@ -1,0 +1,18 @@
+.btnSeeTheMenu {
+	background: rgba(66, 66, 66, 0.16);
+	border: 2px solid #FFFFFF;
+	box-sizing: border-box;
+	border-radius: 2px;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 22px;
+	padding: 27px 66px;
+	margin: 60px 0 107px;
+	text-transform: uppercase;
+	color: #FFFFFF;
+}
+.btnSeeTheMenu:hover {
+	cursor: pointer;
+} 

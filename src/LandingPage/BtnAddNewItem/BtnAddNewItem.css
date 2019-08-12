@@ -6,6 +6,7 @@
 	max-width: 1170px;	
 }
 .btnAddNewItem {
+	text-decoration: none;
 	font-family: Montserrat;
 	font-style: normal;
 	font-weight: bold;

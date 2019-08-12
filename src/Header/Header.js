@@ -3,6 +3,7 @@ import logo from '../Images/logo.png';
 import user from '../Images/shalom-mwenesi-L2sL7VPwHOs-unsplash.png';
 import arrow from '../Images/arrow.png';
 import './Header.css';
+import {NavLink} from 'react-router-dom';
 
 class Header extends Component {
   render() {
@@ -10,9 +11,9 @@ class Header extends Component {
     	<React.Fragment>
     		<header>
           <section className='header-section'>
-            <a href='#'>
+            <NavLink to='/landingPage'>
               <img src={logo} alt='logo' />
-            </a>
+            </NavLink>
             <div className='user'>
               <img src={user} alt='user' />
               <p>Helen Smith</p>

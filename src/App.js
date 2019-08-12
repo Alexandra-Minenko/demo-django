@@ -1,22 +1,19 @@
 import React, { Component } from 'react';
 import Header from './Header/Header';
-import Title from './Section-1/Title';
-import Introduction from './Section-2/Introduction';
-import BtnAddNewItem from './Section-3/BtnAddNewItem';
-import RecipeList from './Section-3/RecipeList';
+import LandingPage from './LandingPage/LandingPage';
+import PageAddNewRecipe from './PageAddNewRecipe/PageAddNewRecipe';
 import Footer from './Footer/Footer';
+import {BrowserRouter, Route} from 'react-router-dom';
 
 class App extends Component {
   render() {
     return (
-    	<React.Fragment>
+    	<BrowserRouter>
     		<Header />
-    		<Title />
-    		<Introduction />
-    		<BtnAddNewItem />
-	    	<RecipeList />
+    		<Route path='/landingPage' component={LandingPage} />
+    		<Route path='/pageAddNewRecipe' component={PageAddNewRecipe} />
 	    	<Footer />
-    	</React.Fragment>
+    	</BrowserRouter>
     );
   }
 }

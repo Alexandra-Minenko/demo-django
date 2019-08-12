@@ -1,11 +1,10 @@
 .addNewRecipe {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: flex-end;
 }
-
 .block {
-	width: 845px;
+	width: 45%;
 	height: 936px;
 	background: #f6fbf6;
 }
@@ -13,18 +12,22 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
+	padding-right: 100px;
 }
 .formForAddRecipe input {
 	width: 600px;
 	border: none;
 	border-bottom: 2px solid #424242;;
 	background: #e5e5e5;
+	outline:none;
 }
 .formForAddRecipe textarea {
 	width: 600px;
 	border: none;
 	border-bottom: 2px solid #424242;;
 	background: #e5e5e5;
+	resize:none;
+	outline:none;
 }
 .formForAddRecipe label {
 	font-family: Montserrat;
@@ -45,6 +48,9 @@
 	opacity: 0.5;
 	padding: 26px 0 30px;
 	margin: 0 0 40px;
+}
+.formForAddRecipe textarea[placeholder] {
+	padding: 26px 0 0;
 }
 .formForAddRecipe input[placeholder]:focus, 
 .formForAddRecipe textarea[placeholder]:focus {

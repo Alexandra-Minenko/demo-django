@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import './BtnAddNewItem.css';
+import {NavLink} from 'react-router-dom';
 
 class BtnAddNewItem extends Component {
 
   render() {
     return (
-      	<form className='section' onSubmit={this.handleSubmit}>
-          <button className='btnAddNewItem'>add new item</button>
-        </form>
+      	<div className='section'>
+          <NavLink to='/pageAddNewRecipe' className='btnAddNewItem'>add new item</NavLink>
+       	</div>
     );
   }
 }

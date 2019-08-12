@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import Recipe from './Recipe';
-import img1 from '../Images/sam-moghadam-mCjTUbpBvwQ-unsplash.png';
-import img2 from '../Images/jannis-brandt-mmsQUgMLqUo-unsplash.png'
-import img3 from '../Images/jennifer-schmidt-zOlQ7lF-3vs-unsplash.png';
-import img4 from '../Images/edgar-castrejon-1SPu0KT-Ejg-unsplash.png';
-import img5 from '../Images/brooke-lark-oaz0raysASk-unsplash.png';
-import img6 from '../Images/ella-olsson-2IxTgsgFi-s-unsplash.png';
+import img1 from '../../Images/sam-moghadam-mCjTUbpBvwQ-unsplash.png';
+import img2 from '../../Images/jannis-brandt-mmsQUgMLqUo-unsplash.png'
+import img3 from '../../Images/jennifer-schmidt-zOlQ7lF-3vs-unsplash.png';
+import img4 from '../../Images/edgar-castrejon-1SPu0KT-Ejg-unsplash.png';
+import img5 from '../../Images/brooke-lark-oaz0raysASk-unsplash.png';
+import img6 from '../../Images/ella-olsson-2IxTgsgFi-s-unsplash.png';
 import './RecipeList.css';
 
 const recipes = [

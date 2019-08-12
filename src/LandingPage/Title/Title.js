@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import BtnSeeTheMenu from './BtnSeeTheMenu';
+import BtnSeeTheMenu from '../BtnSeeTheMenu/BtnSeeTheMenu';
 import './Title.css';
 
 class Title extends Component {

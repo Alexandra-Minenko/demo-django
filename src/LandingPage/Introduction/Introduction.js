@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import leaf from '../Images/leaf.png';
+import leaf from '../../Images/leaf.png';
 import './Introduction.css';
 
 class Introduction extends Component {
