@@ -11,7 +11,7 @@ class Header extends Component {
     	<React.Fragment>
     		<header>
           <section className='header-section'>
-            <NavLink to='/landingPage'>
+            <NavLink to='/'>
               <img src={logo} alt='logo' />
             </NavLink>
             <div className='user'>
