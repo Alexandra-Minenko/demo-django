@@ -1,0 +1,20 @@
+.btnBack {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background: #467C2D;
+	border-radius: 2px;
+	color: #fff;
+	text-decoration: none;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 22px;
+	text-transform: uppercase;
+	width: 274px;
+	height: 76px;
+}
+.btnBack:hover {
+	cursor: pointer;
+}

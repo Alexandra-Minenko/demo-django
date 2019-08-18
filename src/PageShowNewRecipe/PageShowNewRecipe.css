@@ -1,0 +1,34 @@
+.pageShowNewRecipe {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: flex-end;
+	padding-right: 100px;	
+}
+.pageShowNewRecipe h3 {
+	display: flex;
+	flex-wrap: wrap;
+	font-family: Passion One;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 120px;
+	line-height: 110px;
+	display: flex;
+	align-items: center;
+	text-transform: uppercase;
+	color: #263238;
+	margin: 0;
+}
+.pageShowNewRecipe p {
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 27px;
+	display: flex;
+	align-items: center;
+	color: #37474F;
+	margin: 40px 0 60px;
+	
+}
+

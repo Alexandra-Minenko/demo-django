@@ -8,3 +8,7 @@
 	height: 936px;
 	background: #f6fbf6;
 }
+.block img {
+	height: 100%;
+	width: 100%;
+}

@@ -1,73 +1,61 @@
 import React, { Component } from 'react';
-import './FormForAddRecipe.css'
+import './FormForAddRecipe.css';
+import {NavLink} from 'react-router-dom';
 
 class FormForAddRecipe extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: '', 
-      description: '', 
-      addPicture: ''
-    };
-    this.onChangeAddPicture = this.onChangeAddPicture.bind(this);
-    this.onChangeTitle = this.onChangeTitle.bind(this);
-    this.onChangeDescription = this.onChangeDescription.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
-  }
-
-  onChangeAddPicture(event) {
-    this.setState({addPicture: event.target.value});
-  }
-
-  onChangeTitle(event) {
-    this.setState({title: event.target.value});
-  }
   
-  onChangeDescription(event){
-    this.setState({description: event.target.value});
-  }
-
-  onSubmit(event) { 
-    event.preventDefault();
-    console.log('form is submitted', this.state.addPicture, this.state.title, this.state.description);
-  }
-
-
   render() {
+    let newImg = React.createRef();
+    let newTitle = React.createRef();
+    let newDescription = React.createRef();
+
+    let addRecipe = () => {
+      this.props.addNewRecipe();
+      
+  }
+
+    let onRecipeChange = () => {
+      let img = newImg.current.value;
+      let title = newTitle.current.value;
+      let description = newDescription.current.value;
+      this.props.updateNewRecipe(img, title, description);
+    }
+
     return (
     	<div>
-    		<form className='formForAddRecipe' onSubmit={this.onSubmit}>
+    		<form className='formForAddRecipe' /*onSubmit={this.onSubmit}*/>
           <label for="addPicture">Add picture:</label>
-          <input 
-          type="url" 
-          id="addPicture" 
-          name="addPicture" 
-          placeholder='Enter the picture URL...'  
-          pattern="(http|https)://.+" 
-          value={this.state.addPicture}
-          onChange={this.onChangeAddPicture}
-          required
+          <input
+            ref={newImg} 
+            type="url" 
+            name="addPicture" 
+            placeholder='Enter the picture URL...'  
+            pattern="(http|https)://.+" 
+            value={this.props.newImg}
+            onChange={onRecipeChange}
           />
           <label for="title">Title:</label>
           <input 
             type="text"
             name="title" 
-            id="title"  
+            ref={newTitle}
             placeholder='Write your title here...'
-            value={this.state.title}
-            onChange={this.onChangeTitle}
+            value={this.props.newTitle}
+            onChange={onRecipeChange}
             required
             />
           <label for="description">Description:</label>
           <textarea 
-            id="description" 
+            ref={newDescription}
             name="description" 
             placeholder='Write your text here...' 
-            value={this.state.description}
-            onChange={this.onChangeDescription}
-            required>
+            value={this.props.newDescription}
+            onChange={onRecipeChange}
+          >
           </textarea>
-          <input type="submit" value="submit" className='submit' />
+          <NavLink to='/pageShowNewRecipe' 
+                   onClick={ addRecipe } 
+                   className='submit'>submit</NavLink>
         </form>
     	</div>
     );

@@ -1,0 +1,47 @@
+.card {
+	display: flex;
+	flex-direction: column;
+	width: 370px;
+	background: #fff;
+	border-radius: 6px;
+	align-items: center;
+	font-family: Montserrat;
+	font-style: normal;
+	margin: 20px 0;
+	position: relative;
+}
+.card:after {
+	content: '';
+	background: url(../../../Images/edit.png);
+	width: 27px;
+	height: 28px;
+	position: absolute;
+	z-index: 10;
+	top: 20px;
+	right: 20px;
+	cursor: pointer;
+}
+.card img {
+	border-radius: 6px 6px 0 0;
+	width: 370px;
+}
+.card:hover,
+.card img:hover {
+	box-shadow: 0px 80px 120px rgba(207, 216, 220, 0.8);
+	border-radius: 2px;
+}
+.card h3 {
+	font-weight: bold;
+	font-size: 22px;
+	line-height: 33px;
+	text-transform: uppercase;
+	margin: 20px 0 0;
+}
+.card p {
+	margin: 12px 26px 69px;
+	text-align:center;
+	font-size: 16px;
+	line-height: 24px;
+	color: #37474f;
+	font-weight: normal;
+}
