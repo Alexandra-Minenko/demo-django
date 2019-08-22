@@ -9,7 +9,6 @@ class RecipeList extends Component {
 		let recipeList = this.props.recipes.map((item) => 
 			<Recipe img={item.img} title={item.title} description={item.description} />
 		)
-
 		return (
 			<section className='section recipeList'>
 				{recipeList} 

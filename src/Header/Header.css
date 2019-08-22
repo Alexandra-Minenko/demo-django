@@ -13,7 +13,6 @@ header .header-section {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	
 }
 header a {
 	display:flex;
@@ -23,7 +22,6 @@ header .user {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	
 }
 header .user p {
 	font-family: Montserrat;

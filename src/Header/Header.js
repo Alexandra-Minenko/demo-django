@@ -6,22 +6,22 @@ import './Header.css';
 import {NavLink} from 'react-router-dom';
 
 class Header extends Component {
+
   render() {
+
     return (
-    	<React.Fragment>
-    		<header>
-          <section className='header-section'>
-            <NavLink to='/'>
-              <img src={logo} alt='logo' />
-            </NavLink>
-            <div className='user'>
-              <img src={user} alt='user' />
-              <p>Helen Smith</p>
-              <img src={arrow} alt='arrow' />
-            </div>
-          </section>
-        </header>
-    	</React.Fragment>
+  		<header>
+        <section className='header-section'>
+          <NavLink to='/'>
+            <img src={logo} alt='logo' />
+          </NavLink>
+          <div className='user'>
+            <img src={user} alt='user' />
+            <p>Helen Smith</p>
+            <img src={arrow} alt='arrow' />
+          </div>
+        </section>
+      </header>
     );
   }
 }

@@ -19,7 +19,6 @@
 	box-sizing: border-box;
 	margin: 90px 0 87px;
 	border: none;
-	
 }
 .btnAddNewItem:hover {
 	cursor: pointer;

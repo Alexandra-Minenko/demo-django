@@ -6,34 +6,31 @@ import leaf2 from '../Images/leaf2.png';
 import './PageAddNewRecipe.css';
 
 class PageAddNewRecipe extends Component {
-  render() {
-    return (
-    	<BrowserRouter>
-	        <div className='addNewRecipe'>
-	          <img src={leaf2} alt='leaf2'/>
-	          <Route path='/pageAddNewRecipe' 
-	          	render={ () =>
-	          		<FormForAddRecipe addNewRecipe={this.props.addNewRecipe} 
+
+	render() {
+		
+	  	return (
+		    <div className='addNewRecipe'>
+		        <img src={leaf2} alt='leaf2'/>
+		        <Route exact path='/pageAddNewRecipe' render={ () =>
+		      		<FormForAddRecipe addNewRecipe={this.props.addNewRecipe} 
 						          	  newImg={this.props.newImg}
 						          	  newTitle={this.props.newTitle}
 						          	  newDescription={this.props.newDescription}
 						          	  updateNewRecipe={this.props.updateNewRecipe} 
-	          		/>
-	          	}
-	          />
-	          <Route path='/pageShowNewRecipe' 
-	          	render={ () => 
-	          		<PageShowNewRecipe newTitle={this.props.newTitle}
-	          						   newDescription={this.props.newDescription}/>
-	          	} 
-	          />
-	          <div className='block'>
-				<img src={this.props.newImg} />
-	          </div>
-	        </div>
-        </BrowserRouter>
-    );
-  }
+		      		/>}
+		      	/>
+		      	<Route path='/pageAddNewRecipe/showNewRecipe' render={ () => 
+		      		<PageShowNewRecipe newTitle={this.props.newTitle}
+		      						   newDescription={this.props.newDescription} 
+		      		/>} 
+		      	/>
+		      	<div className='block'>
+					<img src={this.props.newImg} />
+		      	</div>
+		    </div>
+		);
+	}
 }
 
 export default PageAddNewRecipe;

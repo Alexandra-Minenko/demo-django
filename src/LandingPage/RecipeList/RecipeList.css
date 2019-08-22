@@ -6,4 +6,5 @@
 }
 .recipeList {
 	margin: 0 auto 120px;
+	justify-content: space-between;
 }

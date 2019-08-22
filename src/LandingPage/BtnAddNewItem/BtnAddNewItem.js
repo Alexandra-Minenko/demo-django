@@ -5,9 +5,12 @@ import {NavLink} from 'react-router-dom';
 class BtnAddNewItem extends Component {
 
   render() {
+
     return (
       	<div className='section'>
-          <NavLink to='/pageAddNewRecipe' className='btnAddNewItem'>add new item</NavLink>
+         	<NavLink to='/pageAddNewRecipe' className='btnAddNewItem'>
+         		add new item
+         	</NavLink>
        	</div>
     );
   }

@@ -3,7 +3,9 @@ import BtnSeeTheMenu from '../BtnSeeTheMenu/BtnSeeTheMenu';
 import './Title.css';
 
 class Title extends Component {
+
   render() {
+    
     return (
     	<section className='title'>
     		<h2>New on your table</h2>

@@ -6,7 +6,9 @@ import RecipeList from './RecipeList/RecipeList';
 
 
 class LandingPage extends Component {
+
   render() {
+    
     return (
     	<React.Fragment>
     		<Title />

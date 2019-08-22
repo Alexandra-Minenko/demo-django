@@ -10,16 +10,17 @@
 	margin: 20px 0;
 	position: relative;
 }
-.card:after {
-	content: '';
-	background: url(../../../Images/edit.png);
+.card .edit {
 	width: 27px;
 	height: 28px;
+	background: url(../../../Images/edit.png);
 	position: absolute;
-	z-index: 10;
 	top: 20px;
 	right: 20px;
 	cursor: pointer;
+}
+.card .edit:hover {
+	box-shadow: 0 0 5px 2px;
 }
 .card img {
 	border-radius: 6px 6px 0 0;

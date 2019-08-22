@@ -6,7 +6,9 @@ import linkedin from '../Images/linkedin.png';
 import './Footer.css';
 
 class Footer extends Component {
+
   render() {
+    
     return (
     	<footer>
     		<section className='section'>

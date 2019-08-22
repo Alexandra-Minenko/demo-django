@@ -5,14 +5,17 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import state, {subscribe} from './state';
 import {addNewRecipe, updateNewRecipe} from './state';
+import {BrowserRouter} from 'react-router-dom';
 
 export let renderEntireTree = (state) => {
-	ReactDOM.render(<App recipes={state.recipes} 
-						 addNewRecipe={addNewRecipe}
-						 newImg={state.newImg}
-						 newTitle={state.newTitle}
-						 newDescription={state.newDescription} 
-						 updateNewRecipe={updateNewRecipe}/>, 
+	ReactDOM.render(<BrowserRouter>
+						<App recipes={state.recipes} 
+							 addNewRecipe={addNewRecipe}
+							 newImg={state.newImg}
+							 newTitle={state.newTitle}
+							 newDescription={state.newDescription} 
+							 updateNewRecipe={updateNewRecipe}/>
+					</BrowserRouter>, 
 				document.getElementById('root'));
 }
 
