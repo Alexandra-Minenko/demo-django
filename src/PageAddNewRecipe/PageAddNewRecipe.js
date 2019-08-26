@@ -13,11 +13,10 @@ class PageAddNewRecipe extends Component {
 		    <div className='addNewRecipe'>
 		        <img src={leaf2} alt='leaf2'/>
 		        <Route exact path='/pageAddNewRecipe' render={ () =>
-		      		<FormForAddRecipe addNewRecipe={this.props.addNewRecipe} 
+		      		<FormForAddRecipe dispatch={this.props.dispatch} 
 						          	  newImg={this.props.newImg}
 						          	  newTitle={this.props.newTitle}
 						          	  newDescription={this.props.newDescription}
-						          	  updateNewRecipe={this.props.updateNewRecipe} 
 		      		/>}
 		      	/>
 		      	<Route path='/pageAddNewRecipe/showNewRecipe' render={ () => 

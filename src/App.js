@@ -16,11 +16,10 @@ class App extends Component {
 		    		<LandingPage recipes={this.props.recipes} /> } />
 		    	<Route path='/pageAddNewRecipe' render={ () => 
 		    		<PageAddNewRecipe recipes={this.props.recipes} 
-		    						  addNewRecipe={this.props.addNewRecipe}
+		    						  dispatch={this.props.dispatch}
 		    						  newImg={this.props.newImg}
 	    							  newTitle={this.props.newTitle}
 					    			  newDescription={this.props.newDescription}
-					    			  updateNewRecipe={this.props.updateNewRecipe}
 		    		/>} 
 		    	/>
 				<Footer />	

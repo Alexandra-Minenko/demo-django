@@ -6,7 +6,7 @@ class RecipeList extends Component {
 
 	render() {
 
-		let recipeList = this.props.recipes.map((item) => 
+		const recipeList = this.props.recipes.map((item) => 
 			<Recipe img={item.img} title={item.title} description={item.description} />
 		)
 		return (

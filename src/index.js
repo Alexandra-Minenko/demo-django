@@ -3,25 +3,23 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import state, {subscribe} from './state';
-import {addNewRecipe, updateNewRecipe} from './state';
+import store from './state';
 import {BrowserRouter} from 'react-router-dom';
 
 export let renderEntireTree = (state) => {
 	ReactDOM.render(<BrowserRouter>
-						<App recipes={state.recipes} 
-							 addNewRecipe={addNewRecipe}
-							 newImg={state.newImg}
-							 newTitle={state.newTitle}
-							 newDescription={state.newDescription} 
-							 updateNewRecipe={updateNewRecipe}/>
+						<App recipes={store.getState().recipes} 
+							 dispatch={store.dispatch.bind(store)}
+							 newImg={store.getState().newImg}
+							 newTitle={store.getState().newTitle}
+							 newDescription={store.getState().newDescription}/>
 					</BrowserRouter>, 
 				document.getElementById('root'));
 }
 
-renderEntireTree(state);
+renderEntireTree(store.getState());
 
-subscribe(renderEntireTree);
+store.subscribe(renderEntireTree);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

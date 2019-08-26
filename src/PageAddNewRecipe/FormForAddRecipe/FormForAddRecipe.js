@@ -1,25 +1,27 @@
 import React, { Component } from 'react';
 import './FormForAddRecipe.css';
 import {NavLink} from 'react-router-dom';
+import {addNewRecipeActionCreater, updateNewRecipeActionCreater} from '../../state';
+
 
 class FormForAddRecipe extends Component {
   
   render() {
 
-    let newImg = React.createRef();
-    let newTitle = React.createRef();
-    let newDescription = React.createRef();
-
-    let addRecipe = () => {
-      this.props.addNewRecipe();
+    const newImg = React.createRef();
+    const newTitle = React.createRef();
+    const newDescription = React.createRef();
+    const addRecipe = () => {
+      this.props.dispatch(addNewRecipeActionCreater());
 
     }
 
-    let onRecipeChange = () => {
-      let img = newImg.current.value;
-      let title = newTitle.current.value;
-      let description = newDescription.current.value;
-      this.props.updateNewRecipe(img, title, description);
+    const onRecipeChange = () => {
+      const img = newImg.current.value;
+      const title = newTitle.current.value;
+      const description = newDescription.current.value;
+      const action = (updateNewRecipeActionCreater(img, title, description));
+      this.props.dispatch(action);
     }
 
     return (
