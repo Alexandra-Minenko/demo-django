@@ -3,9 +3,7 @@ import leaf from '../../Images/leaf.png';
 import './Introduction.css';
 
 class Introduction extends Component {
-
   render() {
-    
     return (
     	<section className='wrap'>
     		<section className='introduction'>

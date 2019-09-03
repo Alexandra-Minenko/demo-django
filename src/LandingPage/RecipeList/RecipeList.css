@@ -1,6 +1,10 @@
 .recipeList {
-	display: grid;
-	grid-template-columns: auto auto auto;
+	display: flex;
 	margin: 0 auto 120px;
-	grid-gap: unset;	
+	justify-content: left;
+}
+@media (max-width: 1170px) {
+	.recipeList {
+	justify-content: space-between;
+	}
 }

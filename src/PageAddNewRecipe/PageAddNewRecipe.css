@@ -7,8 +7,9 @@
 	width: 45%;
 	height: 936px;
 	background: #f6fbf6;
+	overflow: hidden;
 }
 .block img {
 	height: 100%;
-	width: 100%;
+	overflow: hidden;
 }

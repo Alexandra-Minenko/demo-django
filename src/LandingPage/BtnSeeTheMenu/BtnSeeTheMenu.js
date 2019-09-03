@@ -3,9 +3,7 @@ import './BtnSeeTheMenu.css';
 import { ScrollTo } from "react-scroll-to";
 
 class BtnSeeTheMenu extends Component {
-
   render() {
-
     return (
     	<ScrollTo>
         {({ scrollTo }) => (

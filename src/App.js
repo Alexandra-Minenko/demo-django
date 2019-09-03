@@ -6,26 +6,24 @@ import Footer from './Footer/Footer';
 import {BrowserRouter, Route} from 'react-router-dom';
 
 class App extends Component {
-
 	render() {
-  	
-	    return (
-	    	<React.Fragment>
-	   			<Header />
-		    	<Route exact path='/' render={ () => 
-		    		<LandingPage recipes={this.props.recipes} /> } />
-		    	<Route path='/pageAddNewRecipe' render={ () => 
-		    		<PageAddNewRecipe recipes={this.props.recipes} 
-		    						  dispatch={this.props.dispatch}
-		    						  newImg={this.props.newImg}
-	    							  newTitle={this.props.newTitle}
-					    			  newDescription={this.props.newDescription}
-		    		/>} 
-		    	/>
-				<Footer />	
-	    	</React.Fragment>
-    	);
-  	}
+    return (
+    	<React.Fragment>
+   			<Header />
+	    	<Route exact path='/' render={ () => 
+	    		<LandingPage recipes={this.props.recipes} /> } />
+	    	<Route path='/pageAddNewRecipe' render={ () => 
+	    		<PageAddNewRecipe recipes={this.props.recipes} 
+	    						  dispatch={this.props.dispatch}
+	    						  newImg={this.props.newImg}
+    							  newTitle={this.props.newTitle}
+				    			  newDescription={this.props.newDescription}
+	    		/>} 
+	    	/>
+			 <Footer />	
+    	</React.Fragment>
+  	);
+  }
 }
 
 export default App;

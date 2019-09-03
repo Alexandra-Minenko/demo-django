@@ -2,9 +2,8 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	padding-top: 174px;
-	padding-bottom: 205px;
-	padding-right: 100px;
+	width: 600px;
+	padding: 174px 100px 205px 0;
 }
 .formForAddRecipe input {
 	width: 600px;

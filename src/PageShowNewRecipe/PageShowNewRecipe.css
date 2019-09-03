@@ -3,9 +3,11 @@
 	flex-direction: column;
 	align-items: start;
 	justify-content: flex-end;
-	padding-right: 100px;	
+	padding-right: 100px;
+	width: 600px;	
 }
 .pageShowNewRecipe h3 {
+	width: 600px;
 	display: flex;
 	flex-wrap: wrap;
 	font-family: Passion One;

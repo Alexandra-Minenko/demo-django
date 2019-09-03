@@ -7,8 +7,11 @@
 	align-items: center;
 	font-family: Montserrat;
 	font-style: normal;
-	margin: 20px 0;
+	margin: 20px 30px 20px 0;
 	position: relative;
+}
+.card:nth-child(3n) {
+	margin-right: 0;
 }
 .card .edit {
 	width: 27px;
@@ -39,10 +42,19 @@
 	margin: 20px 0 0;
 }
 .card p {
-	margin: 12px 26px 69px;
+	margin: 12px 26px 12px;
 	text-align:center;
 	font-size: 16px;
 	line-height: 24px;
 	color: #37474f;
 	font-weight: normal;
+}
+.card .stars {
+	margin: 0 0 30px;
+	box-sizing: border-box;
+}
+@media (max-width: 1170px) {
+	.card {
+	margin: 20px 0;
+	}
 }
