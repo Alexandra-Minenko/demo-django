@@ -20,7 +20,7 @@ class App extends Component {
 				    			  newDescription={this.props.newDescription}
 	    		/>} 
 	    	/>
-			 <Footer />	
+			  <Footer />
     	</React.Fragment>
   	);
   }
