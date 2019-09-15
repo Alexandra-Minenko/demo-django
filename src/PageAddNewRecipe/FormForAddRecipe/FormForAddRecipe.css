@@ -9,14 +9,12 @@
 	width: 600px;
 	border: none;
 	border-bottom: 2px solid #424242;;
-	background: #e5e5e5;
 	outline:none;
 }
 .formForAddRecipe textarea {
 	width: 600px;
 	border: none;
 	border-bottom: 2px solid #424242;;
-	background: #e5e5e5;
 	resize:none;
 	outline:none;
 }
@@ -31,6 +29,7 @@
 .formForAddRecipe input[placeholder], 
 .formForAddRecipe textarea[placeholder] {
 	font-family: Montserrat;
+  background: #fff;
 	font-style: normal;
 	font-weight: 500;
 	font-size: 18px;

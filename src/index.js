@@ -5,16 +5,14 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import store from './redux/redux-store';
 import {BrowserRouter} from 'react-router-dom';
+import {Provider} from './StoreContext';
 
 let renderEntireTree = (state) => {
 	ReactDOM.render(<BrowserRouter>
-						<App recipes={store.getState().recipes} 
-							 dispatch={store.dispatch.bind(store)}
-							 newImg={store.getState().newImg}
-							 newTitle={store.getState().newTitle}
-							 newDescription={store.getState().newDescription}/>
-					</BrowserRouter>, 
-				document.getElementById('root'));
+                    <Provider store={store}>
+                      <App store={store}/>
+                    </Provider>
+        					</BrowserRouter>, document.getElementById('root'));
 }
 
 renderEntireTree(store.getState());

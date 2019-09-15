@@ -9,7 +9,7 @@ class Header extends Component {
   render() {
     return (
   		<header>
-        <section className='header-section'>
+        <div className='header-layout'>
           <NavLink to='/'>
             <img src={logo} alt='logo' />
           </NavLink>
@@ -18,7 +18,7 @@ class Header extends Component {
             <p>Helen Smith</p>
             <img src={arrow} alt='arrow' />
           </div>
-        </section>
+        </div>
       </header>
     );
   }

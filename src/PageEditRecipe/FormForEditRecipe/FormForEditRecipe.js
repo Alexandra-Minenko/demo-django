@@ -1,25 +1,29 @@
 import React, { Component } from 'react';
-import './FormForAddRecipe.css';
 import {NavLink} from 'react-router-dom';
+import {editRecipeActionCreater, updateSelectedRecipeActionCreater} from '../../redux/newRecipeReducer';
 
-class FormForAddRecipe extends Component {
+class FormForEditRecipe extends Component {
    render() {
 
     const newImg = React.createRef();
     const newTitle = React.createRef();
     const newDescription = React.createRef();
 
-    const onAddRecipe = () => {
-      this.props.addNewRecipe();
-    }
-
     const onRecipeChange = () => {
       let img = newImg.current.value;
       let title = newTitle.current.value;
       let description = newDescription.current.value;
       this.props.updateNewRecipe(img, title, description);
+    
     }
     
+    const editRecipe = () => {
+      let img = newImg.current.value;
+      let title = newTitle.current.value;
+      let description = newDescription.current.value;
+      this.props.editRecipe(img, title, description);
+    }
+
     return (
   		<form className='formForAddRecipe' >
 
@@ -29,10 +33,9 @@ class FormForAddRecipe extends Component {
           type="url" 
           name="addPicture" 
           placeholder='Enter the picture URL...'  
-          pattern="(http|https)://.+"
+          /*pattern="(http|https)://.+"*/
           value={this.props.img}
-          onChange={onRecipeChange}
-          required />
+          onChange={onRecipeChange} />
 
         <label htmlFor="title">Title:</label>
         <input 
@@ -53,8 +56,8 @@ class FormForAddRecipe extends Component {
           onChange={onRecipeChange} >
         </textarea>
 
-        <NavLink to='/pageShowNewRecipe' 
-                 onClick={ onAddRecipe } 
+        <NavLink to={/pageShowNewRecipe/ + this.props.id} 
+                 onClick={ editRecipe } 
                  className='submit'>
           submit
         </NavLink>
@@ -63,4 +66,4 @@ class FormForAddRecipe extends Component {
   }
 }
 
-export default FormForAddRecipe;
+export default FormForEditRecipe;

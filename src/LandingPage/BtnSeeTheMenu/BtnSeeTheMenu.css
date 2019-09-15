@@ -1,4 +1,9 @@
+html {
+  scroll-behavior: smooth;
+}
 .btnSeeTheMenu {
+  display: block;
+  text-decoration: none;
 	background: rgba(66, 66, 66, 0.16);
 	border: 2px solid #FFFFFF;
 	box-sizing: border-box;

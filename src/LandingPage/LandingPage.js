@@ -4,7 +4,6 @@ import Introduction from './Introduction/Introduction';
 import BtnAddNewItem from './BtnAddNewItem/BtnAddNewItem';
 import RecipeList from './RecipeList/RecipeList';
 
-
 class LandingPage extends Component {
   render() {
     return (
@@ -12,7 +11,7 @@ class LandingPage extends Component {
     		<Title />
     		<Introduction />
     		<BtnAddNewItem />
-	    	<RecipeList recipes={this.props.recipes}/>
+	    	<RecipeList/>
     	</React.Fragment>
     );
   }

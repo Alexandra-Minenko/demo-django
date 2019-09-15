@@ -1,19 +1,29 @@
-.card {
+.box-recipe {
+  display: flex;
+  flex-direction: column;
+  width: 370px;
+  background: #fff;
+  border-radius: 6px;
+  align-items: center;
+  margin: 20px 30px 20px 0;
+  position: relative;
+}
+.box-recipe:nth-child(3n) {
+  margin-right: 0;
+}
+.recipe {
+  text-decoration: none;
+  align-items: center;
 	display: flex;
 	flex-direction: column;
-	width: 370px;
-	background: #fff;
-	border-radius: 6px;
-	align-items: center;
 	font-family: Montserrat;
 	font-style: normal;
-	margin: 20px 30px 20px 0;
-	position: relative;
 }
-.card:nth-child(3n) {
-	margin-right: 0;
+.box-recipe:hover {
+  box-shadow: 0px 80px 120px rgba(207, 216, 220, 0.8);
+  cursor: pointer;
 }
-.card .edit {
+.icon-edit {
 	width: 27px;
 	height: 28px;
 	background: url(../../../Images/edit.png);
@@ -22,26 +32,23 @@
 	right: 20px;
 	cursor: pointer;
 }
-.card .edit:hover {
+.icon-edit:hover {
 	box-shadow: 0 0 5px 2px;
 }
-.card img {
+.recipe img {
 	border-radius: 6px 6px 0 0;
 	width: 370px;
 }
-.card:hover,
-.card img:hover {
-	box-shadow: 0px 80px 120px rgba(207, 216, 220, 0.8);
-	border-radius: 2px;
-}
-.card h3 {
+.recipe h3 {
+  text-align:center;
 	font-weight: bold;
 	font-size: 22px;
 	line-height: 33px;
+  color: #263238;
 	text-transform: uppercase;
 	margin: 20px 0 0;
 }
-.card p {
+.recipe p {
 	margin: 12px 26px 12px;
 	text-align:center;
 	font-size: 16px;
@@ -49,12 +56,12 @@
 	color: #37474f;
 	font-weight: normal;
 }
-.card .stars {
+.box-recipe .icon-star {
 	margin: 0 0 30px;
 	box-sizing: border-box;
 }
 @media (max-width: 1170px) {
-	.card {
+	.box-recipe {
 	margin: 20px 0;
 	}
 }

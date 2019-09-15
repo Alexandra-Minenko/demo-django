@@ -1,31 +1,29 @@
 import React, { Component } from 'react';
-import {BrowserRouter, Route} from 'react-router-dom';
-import FormForAddRecipe from './FormForAddRecipe/FormForAddRecipe';
+import FormForAddRecipeContainer from './FormForAddRecipe/FormForAddRecipeContainer';
 import PageShowNewRecipe from '../PageShowNewRecipe/PageShowNewRecipe';
 import leaf2 from '../Images/leaf2.png';
 import './PageAddNewRecipe.css';
+import StoreContext from '../StoreContext';
 
 class PageAddNewRecipe extends Component {
 	render() {
   	return (
-	    <div className='addNewRecipe'>
-        <img src={leaf2} alt='leaf2'/>
-        <Route exact path='/pageAddNewRecipe' render={ () =>
-          <FormForAddRecipe dispatch={this.props.dispatch}
-                      newImg={this.props.newImg}
-                      newTitle={this.props.newTitle}
-                      newDescription={this.props.newDescription}
-          />}
-        />
-        <Route path='/pageAddNewRecipe/showNewRecipe' render={ () =>
-          <PageShowNewRecipe newTitle={this.props.newTitle}
-                     newDescription={this.props.newDescription}
-          />}
-        />
-        <div className='block'>
-          <img src={this.props.newImg} />
-        </div>
-	    </div>
+      <StoreContext.Consumer>
+        {
+          (store) => {
+            return (
+              <div className='addNewRecipe'>
+                <img src={leaf2} alt='leaf2'/>
+                <FormForAddRecipeContainer store={store}/>
+                <div className='preview-img'>
+                  <img src={store.getState().newImg} />
+                </div>
+              </div>
+            )
+          }
+        }
+      </StoreContext.Consumer>
+	    
 		);
 	}
 }
