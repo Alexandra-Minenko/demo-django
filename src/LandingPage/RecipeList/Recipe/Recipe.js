@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {NavLink} from 'react-router-dom';
 import './Recipe.css';
 import ReactStars from 'react-stars';
-import {addSelectedRecipeActionCreater,changedRatingActionCreater} from '../../../redux/newRecipeReducer';
 
 class Recipe extends Component {
   render(){
@@ -10,8 +9,7 @@ class Recipe extends Component {
     const ratingChanged = (newRating) => {
       let id = this.props.id;
       let ratingValue = newRating;
-      let action = (changedRatingActionCreater(id,ratingValue));
-      this.props.store.dispatch(action);
+      this.props.ratingChanged(id,ratingValue);
     }
       
     const selectedRecipe = () => {
@@ -19,8 +17,7 @@ class Recipe extends Component {
       let img = this.props.img;
       let title = this.props.title;
       let description = this.props.description;
-      let action = (addSelectedRecipeActionCreater(id,img,title,description));
-      this.props.store.dispatch(action);
+      this.props.selectedRecipe(id,img,title,description);
     }
     
     return (

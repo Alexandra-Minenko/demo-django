@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {NavLink} from 'react-router-dom';
-import {editRecipeActionCreater, updateSelectedRecipeActionCreater} from '../../redux/newRecipeReducer';
 
 class FormForEditRecipe extends Component {
    render() {

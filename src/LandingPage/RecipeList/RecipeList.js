@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Recipe from './Recipe/Recipe';
+import RecipeContainer from './Recipe/RecipeContainer';
 import './RecipeList.css';
 import StoreContext from '../../StoreContext';
 
@@ -12,7 +12,7 @@ class RecipeList extends Component {
             return (
               <div className='layout recipeList'>
                 {store.getState().recipes.map((item) => 
-                  <Recipe key={item.id}
+                  <RecipeContainer key={item.id}
                           id={item.id}
                           img={item.img} 
                           title={item.title} 

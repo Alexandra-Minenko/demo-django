@@ -12,21 +12,12 @@ class App extends Component {
     return (
     	<React.Fragment>
    			<Header />
-	    	<Route exact path='/' render={ () => 
-	    		<LandingPage store={this.props.store} /> } />
-	    	<Route path='/pageAddNewRecipe' render={ () => 
-	    		<PageAddNewRecipe />} 
-	    	/>
+	    	<Route exact path='/' render={ () => <LandingPage /> } />
+	    	<Route path='/pageAddNewRecipe' render={ () => <PageAddNewRecipe />} />
         
-        <Route path='/pageShowNewRecipe' render={ () => 
-          <PageShowNewRecipe img={this.props.store.getState().selectedRecipe.img}
-                             title={this.props.store.getState().selectedRecipe.title}
-                             description={this.props.store.getState().selectedRecipe.description}/>} 
+        <Route path='/pageShowNewRecipe' render={ () => <PageShowNewRecipe />} 
         />
-        <Route path={/pageEditRecipe/ + this.props.store.getState().selectedRecipe.id} render={ () => 
-          <PageEditRecipe img={this.props.store.getState().selectedRecipe.img}
-                          title={this.props.store.getState().selectedRecipe.title}
-                          description={this.props.store.getState().selectedRecipe.description}/>} 
+        <Route path='/pageEditRecipe' render={ () => <PageEditRecipe />} 
         />
 			  <Footer />
     	</React.Fragment>

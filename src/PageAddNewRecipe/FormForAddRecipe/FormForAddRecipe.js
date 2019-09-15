@@ -50,7 +50,8 @@ class FormForAddRecipe extends Component {
           name="description" 
           placeholder='Write your text here...' 
           value={this.props.description}
-          onChange={onRecipeChange} >
+          onChange={onRecipeChange}
+          required>
         </textarea>
 
         <NavLink to='/pageShowNewRecipe' 

@@ -11,7 +11,6 @@ class FormForEditRecipeContainer extends Component {
     const editRecipe = (img,title,description) => {
       let action = (editRecipeActionCreater(img,title,description));
       this.props.store.dispatch(action);
-      console.log(state);
     }
 
     const onRecipeChange = (img, title, description) => {
@@ -21,12 +20,10 @@ class FormForEditRecipeContainer extends Component {
 
     return (
   		<FormForEditRecipe updateNewRecipe={onRecipeChange } 
-      state={state}
-                        editRecipe={editRecipe}
-                        img={state.selectedRecipe.img}
-                        title={state.selectedRecipe.title}
-                        description={state.selectedRecipe.description}
-                        id={state.selectedRecipe.id}/>
+                         editRecipe={editRecipe}
+                         img={state.selectedRecipe.img}
+                         title={state.selectedRecipe.title}
+                         description={state.selectedRecipe.description}/>
     );
   }
 }

@@ -1,8 +1,7 @@
-import {createStore, combineReducers} from 'redux';
+import {createStore} from 'redux';
 import newRecipeReducer from './newRecipeReducer';
 
-let reducers = newRecipeReducer;
 
-let store = createStore(reducers);
+let store = createStore(newRecipeReducer);
 
 export default store;

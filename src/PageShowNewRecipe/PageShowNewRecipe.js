@@ -13,11 +13,11 @@ class PageShowNewRecipe extends Component {
             return (
               <div className='addNewRecipe'>
                 <img src={leaf2} alt='leaf2'/>
-                <FormForShowRecipe img={this.props.img}
-                                   title={this.props.title}
-                                   description={this.props.description}/>
+                <FormForShowRecipe img={store.getState().selectedRecipe.img}
+                                   title={store.getState().selectedRecipe.title}
+                                   description={store.getState().selectedRecipe.description}/>
                 <div className='preview-img'>
-                  <img src={this.props.img} />
+                  <img src={store.getState().selectedRecipe.img} />
                 </div>
               </div>
             )
