@@ -1,29 +1,23 @@
 import React, { Component } from 'react';
-import RecipeContainer from './Recipe/RecipeContainer';
+import Recipe from './Recipe/Recipe';
 import './RecipeList.css';
+import {addSelectedRecipeActionCreater,changedRatingActionCreater} from '../../redux/newRecipeReducer';
 import StoreContext from '../../StoreContext';
 
 class RecipeList extends Component {
 	render() {
 		return (
-      <StoreContext.Consumer>
-        {
-          (store) => {
-            return (
-              <div className='layout recipeList'>
-                {store.getState().recipes.map((item) => 
-                  <RecipeContainer key={item.id}
-                          id={item.id}
-                          img={item.img} 
-                          title={item.title} 
-                          description={item.description}
-                          ratingValue={item.ratingValue}
-                          store={store} />)}
-              </div>
-            )
-          }
-        }
-			</StoreContext.Consumer>
+      <div className='layout recipeList'>
+        {this.props.recipes.map((item) => 
+          <Recipe key={item.id}
+                  id={item.id}
+                  img={item.img} 
+                  title={item.title} 
+                  description={item.description}
+                  ratingValue={item.ratingValue}
+                  ratingChanged={this.props.ratingChanged}
+                  selectedRecipe={this.props.selectedRecipe} />)}
+      </div>
 		)
 	}
 }

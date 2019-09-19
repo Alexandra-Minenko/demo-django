@@ -3,59 +3,57 @@ import './FormForAddRecipe.css';
 import {NavLink} from 'react-router-dom';
 
 class FormForAddRecipe extends Component {
-   render() {
+  newImg = React.createRef();
+  newTitle = React.createRef();
+  newDescription = React.createRef();
+  
+  onAddRecipe = () => {
+    this.props.addNewRecipe();
+  }
 
-    const newImg = React.createRef();
-    const newTitle = React.createRef();
-    const newDescription = React.createRef();
-
-    const onAddRecipe = () => {
-      this.props.addNewRecipe();
-    }
-
-    const onRecipeChange = () => {
-      let img = newImg.current.value;
-      let title = newTitle.current.value;
-      let description = newDescription.current.value;
-      this.props.updateNewRecipe(img, title, description);
-    }
-    
+  onRecipeChange = () => {
+    let img = this.newImg.current.value;
+    let title = this.newTitle.current.value;
+    let description = this.newDescription.current.value;
+    this.props.updateNewRecipe(img, title, description);
+  }
+  render() {
     return (
   		<form className='formForAddRecipe' >
 
         <label htmlFor="addPicture">Add picture:</label>
         <input
-          ref={newImg} 
+          ref={this.newImg} 
           type="url" 
           name="addPicture" 
           placeholder='Enter the picture URL...'  
           pattern="(http|https)://.+"
           value={this.props.img}
-          onChange={onRecipeChange}
+          onChange={this.onRecipeChange}
           required />
 
         <label htmlFor="title">Title:</label>
         <input 
+          ref={this.newTitle}
           type="text"
           name="title" 
-          ref={newTitle}
           placeholder='Write your title here...'
           value={this.props.title}
-          onChange={onRecipeChange}
+          onChange={this.onRecipeChange}
           required />
 
         <label htmlFor="description">Description:</label>
         <textarea 
-          ref={newDescription}
+          ref={this.newDescription}
           name="description" 
           placeholder='Write your text here...' 
           value={this.props.description}
-          onChange={onRecipeChange}
+          onChange={this.onRecipeChange}
           required>
         </textarea>
 
         <NavLink to='/pageShowNewRecipe' 
-                 onClick={ onAddRecipe } 
+                 onClick={ this.onAddRecipe } 
                  className='submit'>
           submit
         </NavLink>

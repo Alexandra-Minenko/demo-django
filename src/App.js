@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Header from './Header/Header';
 import LandingPage from './LandingPage/LandingPage';
-import PageAddNewRecipe from './PageAddNewRecipe/PageAddNewRecipe';
-import PageShowNewRecipe from './PageShowNewRecipe/PageShowNewRecipe';
-import PageEditRecipe from './PageEditRecipe/PageEditRecipe';
+import PageAddNewRecipeContainer from './PageAddNewRecipe/PageAddNewRecipeContainer';
+import PageShowNewRecipeContainer from './PageShowNewRecipe/PageShowNewRecipeContainer';
+import PageEditRecipeContainer from './PageEditRecipe/PageEditRecipeContainer';
 import Footer from './Footer/Footer';
 import {Route} from 'react-router-dom';
 
@@ -13,11 +13,11 @@ class App extends Component {
     	<React.Fragment>
    			<Header />
 	    	<Route exact path='/' render={ () => <LandingPage /> } />
-	    	<Route path='/pageAddNewRecipe' render={ () => <PageAddNewRecipe />} />
+	    	<Route path='/pageAddNewRecipe' render={ () => <PageAddNewRecipeContainer />} />
         
-        <Route path='/pageShowNewRecipe' render={ () => <PageShowNewRecipe />} 
+        <Route path='/pageShowNewRecipe' render={ () => <PageShowNewRecipeContainer />} 
         />
-        <Route path='/pageEditRecipe' render={ () => <PageEditRecipe />} 
+        <Route path='/pageEditRecipe' render={ () => <PageEditRecipeContainer />} 
         />
 			  <Footer />
     	</React.Fragment>

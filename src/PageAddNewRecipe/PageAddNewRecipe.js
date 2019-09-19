@@ -1,29 +1,22 @@
 import React, { Component } from 'react';
-import FormForAddRecipeContainer from './FormForAddRecipe/FormForAddRecipeContainer';
-import PageShowNewRecipe from '../PageShowNewRecipe/PageShowNewRecipe';
+import FormForAddRecipe from './FormForAddRecipe/FormForAddRecipe';
 import leaf2 from '../Images/leaf2.png';
 import './PageAddNewRecipe.css';
-import StoreContext from '../StoreContext';
 
 class PageAddNewRecipe extends Component {
 	render() {
   	return (
-      <StoreContext.Consumer>
-        {
-          (store) => {
-            return (
-              <div className='addNewRecipe'>
-                <img src={leaf2} alt='leaf2'/>
-                <FormForAddRecipeContainer store={store}/>
-                <div className='preview-img'>
-                  <img src={store.getState().newImg} />
-                </div>
-              </div>
-            )
-          }
-        }
-      </StoreContext.Consumer>
-	    
+      <div className='addNewRecipe'>
+        <img src={leaf2} alt='leaf2'/>
+        <FormForAddRecipe img={this.props.state.newRecipe.newImg}
+                          title={this.props.state.newRecipe.newTitle}
+                          description={this.props.state.newRecipe.newDescription}
+                          addNewRecipe={this.props.addNewRecipe}
+                          updateNewRecipe={this.props.updateNewRecipe}/>
+        <div className='preview-img'>
+          <img src={this.props.state.newRecipe.newImg} />
+        </div>
+      </div>
 		);
 	}
 }

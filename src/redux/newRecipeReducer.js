@@ -74,67 +74,79 @@ let initialState = {
 
 const newRecipeReducer = (state = initialState, action) => {
 	switch(action.type) {
+    case UPDATE_NEW_RECIPE: 
+    return {...state, newRecipe: {...state.newRecipe,
+                                  newImg: action.newImg,
+                                  newTitle: action.newTitle,
+                                  newDescription: action.newDescription}}
 		case ADD_NEW_RECIPE:
 			let newRecipe = {
         id: state.recipes[state.recipes.length - 1].id +1,
-	     	img: state.newImg,
-	     	title: state.newTitle,
-	     	description: state.newDescription
+	     	img: state.newRecipe.newImg,
+	     	title: state.newRecipe.newTitle,
+	     	description: state.newRecipe.newDescription
 		  };
-      state.recipes.push(newRecipe);
-      state.newId = '';
-      state.newImg = '';
-      state.newTitle = '';
-      state.newDescription = '';
-      return state;
-		case UPDATE_NEW_RECIPE:
-			state.newImg = action.newImg;
-      state.newTitle = action.newTitle;
-      state.newDescription = action.newDescription;
-      return state;
+      return {...state, recipes: [...state.recipes, newRecipe],
+              newRecipe: {...state.newRecipe, 
+                          newId: '', newImg: '', 
+                          newTitle: '', newDescription: ''}}
     case SELECTED_RECIPE:
-      for(var i=0; i<state.recipes.length; i++) {
-        if(state.recipes[i].id == action.id) {
-          state.selectedRecipe.id = action.id;
-          state.selectedRecipe.img = action.img;
-          state.selectedRecipe.title = action.title;
-          state.selectedRecipe.description = action.description;
-          return state;
+      {let stateCopy = {...state, 
+                       recipes: [...state.recipes], 
+                       selectedRecipe: {...state.selectedRecipe}}
+        for(var i=0; i<stateCopy.recipes.length; i++) {
+          stateCopy.recipes[i] = {...state.recipes[i]};
+          if(stateCopy.recipes[i].id == action.id) {
+            stateCopy.selectedRecipe.id = action.id;
+            stateCopy.selectedRecipe.img = action.img;
+            stateCopy.selectedRecipe.title = action.title;
+            stateCopy.selectedRecipe.description = action.description;
+            return stateCopy;
+          }
         }
+        const lastRecipe = [stateCopy.recipes.length-1];
+        stateCopy.selectedRecipe.id = stateCopy.recipes.lastRecipe.id;
+        stateCopy.selectedRecipe.img = stateCopy.recipes.lastRecipe.img;
+        stateCopy.selectedRecipe.title = stateCopy.recipes.lastRecipe.title;
+        stateCopy.selectedRecipe.description = stateCopy.recipes.lastRecipe.description;
+        return stateCopy;
       }
-      state.selectedRecipe.id = state.recipes[state.recipes.length-1].id;
-      state.selectedRecipe.img = state.recipes[state.recipes.length-1].img;
-      state.selectedRecipe.title = state.recipes[state.recipes.length-1].title;
-      state.selectedRecipe.description = state.recipes[state.recipes.length-1].description;
-      return state;
     case UPDATE_SELECTED_RECIPE:
-      state.selectedRecipe.img = action.img;
-      state.selectedRecipe.title = action.title;
-      state.selectedRecipe.description = action.description;
-      return state;
+     return {...state, selectedRecipe: 
+                        {...state.selectedRecipe,
+                          img: action.img,
+                          title: action.title,
+                          description: action.description
+                         }}
     case EDIT_RECIPE:
-      for(var i=0; i<state.recipes.length; i++) {
-        if(state.recipes[i].id == state.selectedRecipe.id) {
-          state.recipes[i].img = action.img;
-          state.recipes[i].title = action.title;
-          state.recipes[i].description = action.description;
-          return state;
+      {let stateCopy = {...state, 
+                       recipes: [...state.recipes], 
+                       selectedRecipe: {...state.selectedRecipe}}
+        for(var i=0; i<state.recipes.length; i++) {
+          stateCopy.recipes[i] = {...state.recipes[i]};
+          if(stateCopy.recipes[i].id == stateCopy.selectedRecipe.id) {
+            stateCopy.recipes[i].img = action.img;
+            stateCopy.recipes[i].title = action.title;
+            stateCopy.recipes[i].description = action.description;
+            return stateCopy;
+          }
         }
       }
     case CHANGED_RATING:
-      for(var i=0; i<state.recipes.length; i++) {
-        if(state.recipes[i].id == action.id) {
-          if(state.recipes[i].ratingValue > 0) {
-            state.recipes[i].ratingValue = (state.recipes[i].ratingValue + action.ratingValue)/2;
-            console.log(state);
-            return state;
-          }
-          else {
-          state.recipes[i].ratingValue = action.ratingValue;
-          console.log(state);
-          return state;
+      {let stateCopy = {...state, recipes: [...state.recipes]}
+        for(var i=0; i<stateCopy.recipes.length; i++) {
+          stateCopy.recipes[i] = {...state.recipes[i]};
+          if(stateCopy.recipes[i].id == action.id) {
+            if(stateCopy.recipes[i].ratingValue > 0) {
+              stateCopy.recipes[i].ratingValue = (stateCopy.recipes[i].ratingValue + action.ratingValue)/2;
+              return stateCopy;
+            }
+            else {
+            stateCopy.recipes[i].ratingValue = action.ratingValue;
+            return stateCopy;
+            } 
           } 
-        } 
+        }
       }
     default:
       return state;

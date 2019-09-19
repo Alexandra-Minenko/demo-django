@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Title from './Title/Title';
 import Introduction from './Introduction/Introduction';
 import BtnAddNewItem from './BtnAddNewItem/BtnAddNewItem';
-import RecipeList from './RecipeList/RecipeList';
+import RecipeListContainer from './RecipeList/RecipeListContainer';
 
 class LandingPage extends Component {
   render() {
@@ -11,7 +11,7 @@ class LandingPage extends Component {
     		<Title />
     		<Introduction />
     		<BtnAddNewItem />
-	    	<RecipeList/>
+	    	<RecipeListContainer/>
     	</React.Fragment>
     );
   }
